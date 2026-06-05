@@ -1,0 +1,10 @@
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.db
+bin/
+obj/
+x64/
+*.exe
+*.pdb

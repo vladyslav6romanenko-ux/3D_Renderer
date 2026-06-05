@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{780ecd7e-116e-40ad-93c2-b7e9424db1b7}</ProjectGuid>
+    <RootNamespace>My3DRenderer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="fragment.glsl" />
+    <None Include="packages.config" />
+    <None Include="vertex.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="tiny_obj_loader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\4880219806629888.jpg" />
+    <Image Include="resources\6293fa4cad13168420de47380d0b0e36.jpg" />
+    <Image Include="resources\8a635e6585d4ceacba00ec627996cdaa.jpg" />
+    <Image Include="resources\aerial_grass_rock_ao_1k.jpg" />
+    <Image Include="resources\aerial_grass_rock_diff_1k.jpg" />
+    <Image Include="resources\BuildingsHighRise0551_1_download600.jpg" />
+    <Image Include="resources\BuildingsHighRise0558_download600.jpg" />
+    <Image Include="resources\Building_texture10.jpg" />
+    <Image Include="resources\Building_texture3.jpg" />
+    <Image Include="resources\Building_texture5.jpg" />
+    <Image Include="resources\Building_texture6.jpg" />
+    <Image Include="resources\Building_texture8.jpg" />
+    <Image Include="resources\Building_texture9.jpg" />
+    <Image Include="resources\Capture.PNG" />
+    <Image Include="resources\dark table wood.PNG" />
+    <Image Include="resources\download (1).jpg" />
+    <Image Include="resources\download (10).jpg" />
+    <Image Include="resources\download (11).jpg" />
+    <Image Include="resources\download (2).jpg" />
+    <Image Include="resources\download (3).jpg" />
+    <Image Include="resources\download (4).jpg" />
+    <Image Include="resources\download (5).jpg" />
+    <Image Include="resources\download (6).jpg" />
+    <Image Include="resources\download (7).jpg" />
+    <Image Include="resources\download (8).jpg" />
+    <Image Include="resources\download (9).jpg" />
+    <Image Include="resources\download.jpg" />
+    <Image Include="resources\download4.jpg" />
+    <Image Include="resources\ea2874c813cd1d48138d045f6ca43c7b.jpg" />
+    <Image Include="resources\f13bf40efcab60e4cdabd13d4c81856a.jpg" />
+    <Image Include="resources\Facade001_2K_Color.jpg" />
+    <Image Include="resources\Facade006_2K_Color.jpg" />
+    <Image Include="resources\grass.jpg" />
+    <Image Include="resources\HighRiseGlass0048_1_download600.jpg" />
+    <Image Include="resources\HighRiseResidential0062_1_download600.jpg" />
+    <Image Include="resources\HighRiseResidential0062_2_download600.jpg" />
+    <Image Include="resources\images (1).jpg" />
+    <Image Include="resources\images (10).jpg" />
+    <Image Include="resources\images (11).jpg" />
+    <Image Include="resources\images (12).jpg" />
+    <Image Include="resources\images (13).jpg" />
+    <Image Include="resources\images (14).jpg" />
+    <Image Include="resources\images (15).jpg" />
+    <Image Include="resources\images (16).jpg" />
+    <Image Include="resources\images (17).jpg" />
+    <Image Include="resources\images (18).jpg" />
+    <Image Include="resources\images (19).jpg" />
+    <Image Include="resources\images (2).jpg" />
+    <Image Include="resources\images (20).jpg" />
+    <Image Include="resources\images (21).jpg" />
+    <Image Include="resources\images (22).jpg" />
+    <Image Include="resources\images (23).jpg" />
+    <Image Include="resources\images (24).jpg" />
+    <Image Include="resources\images (25).jpg" />
+    <Image Include="resources\images (26).jpg" />
+    <Image Include="resources\images (27).jpg" />
+    <Image Include="resources\images (3).jpg" />
+    <Image Include="resources\images (4).jpg" />
+    <Image Include="resources\images (5).jpg" />
+    <Image Include="resources\images (6).jpg" />
+    <Image Include="resources\images (7).jpg" />
+    <Image Include="resources\images (8).jpg" />
+    <Image Include="resources\images (9).jpg" />
+    <Image Include="resources\images.jpg" />
+    <Image Include="resources\militarytexture.jpg" />
+    <Image Include="resources\peopleColors.png" />
+    <Image Include="resources\road.jpg" />
+    <Image Include="resources\roo4.jpg" />
+    <Image Include="resources\roof 2.jpg" />
+    <Image Include="resources\roof3.jpg" />
+    <Image Include="resources\roof5.jpg" />
+    <Image Include="resources\roof6.jpg" />
+    <Image Include="resources\texture 1.jpg" />
+    <Image Include="resources\TexturesCom_BuildingsHighRise0497_1_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_BuildingsHighRise0560_1_S.jpg" />
+    <Image Include="resources\TexturesCom_BuildingsHighRise0564_1_S.jpg" />
+    <Image Include="resources\TexturesCom_BuildingsHighRise0607_1_S.jpg" />
+    <Image Include="resources\TexturesCom_BuildingsHighRise0624_2_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_BuildingsHighRise0625_2_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_BuildingsHighRise0634_5_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_BuildingsHighRise0639_5_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0031_1_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0048_1_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0053_1_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0056_1_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0082_1_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0086_1_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0091_1_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0101_3_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0104_3_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseGlass0110_4_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseResidential0098_1_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseResidential0101_1_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseResidential0197_2_seamless_S.jpg" />
+    <Image Include="resources\TexturesCom_HighRiseTowers0158_3_S.jpg" />
+    <Image Include="resources\TexturesCom_MetalPlatesBare0158_10_seamless_S.jpg" />
+    <Image Include="resources\unnamed (1).jpg" />
+    <Image Include="resources\unnamed.jpg" />
+    <Image Include="resources\White bricks.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\glfw.3.4.0\build\native\glfw.targets" Condition="Exists('..\packages\glfw.3.4.0\build\native\glfw.targets')" />
+    <Import Project="..\packages\glew.v140.1.12.0\build\native\glew.v140.targets" Condition="Exists('..\packages\glew.v140.1.12.0\build\native\glew.v140.targets')" />
+    <Import Project="..\packages\glm.1.0.3\build\native\glm.targets" Condition="Exists('..\packages\glm.1.0.3\build\native\glm.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\glfw.3.4.0\build\native\glfw.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glfw.3.4.0\build\native\glfw.targets'))" />
+    <Error Condition="!Exists('..\packages\glew.v140.1.12.0\build\native\glew.v140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glew.v140.1.12.0\build\native\glew.v140.targets'))" />
+    <Error Condition="!Exists('..\packages\glm.1.0.3\build\native\glm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glm.1.0.3\build\native\glm.targets'))" />
+  </Target>
+</Project>

@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="3D_Renderer/3D_Renderer.vcxproj" Id="780ecd7e-116e-40ad-93c2-b7e9424db1b7" />
+</Solution>
