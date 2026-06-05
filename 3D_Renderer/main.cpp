@@ -76,7 +76,6 @@ void processInput(GLFWwindow* window) {
         cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 }
 
-// --- Утиліта для компіляції шейдерів з повною перевіркою помилок ---
 GLuint CompileShader(const char* vertexPath, const char* fragmentPath) {
     std::string vertexCode, fragmentCode;
     std::ifstream vShaderFile, fShaderFile;
@@ -103,7 +102,7 @@ GLuint CompileShader(const char* vertexPath, const char* fragmentPath) {
     int success;
     char infoLog[512];
 
-    // Вершинний шейдер
+
     vertex = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertex, 1, &vShaderCode, NULL);
     glCompileShader(vertex);
@@ -113,7 +112,7 @@ GLuint CompileShader(const char* vertexPath, const char* fragmentPath) {
         std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 
-    // Фрагментний шейдер
+
     fragment = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragment, 1, &fShaderCode, NULL);
     glCompileShader(fragment);
@@ -123,7 +122,7 @@ GLuint CompileShader(const char* vertexPath, const char* fragmentPath) {
         std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 
-    // Шейдерна програма
+
     GLuint ID = glCreateProgram();
     glAttachShader(ID, vertex);
     glAttachShader(ID, fragment);
@@ -232,16 +231,15 @@ int main() {
     glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, Normal));
     glEnableVertexAttribArray(2);
 
-    // --- ЗАВАНТАЖЕННЯ ТЕКСТУРИ ---
+
     unsigned int texture1;
     glGenTextures(1, &texture1);
     glBindTexture(GL_TEXTURE_2D, texture1);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 
-    // По вертикалі (вісь T) відсікаємо все, що виходить за межі етикетки
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 
-    // Встановлюємо колір для всього, що знаходиться ПОЗА етикеткою (темне скло)
+
     float borderColor[] = { 0.08f, 0.02f, 0.01f, 1.0f };
     glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
 
@@ -261,7 +259,7 @@ int main() {
     stbi_image_free(data);
 
     glUseProgram(shaderProgram);
-    // Прив'язуємо текстуру до юніформу texture_diffuse (текстурний слот 0)
+
     glUniform1i(glGetUniformLocation(shaderProgram, "texture_diffuse"), 0);
 
     while (!glfwWindowShouldClose(window)) {
@@ -279,14 +277,13 @@ int main() {
         glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
         glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, -3.5f, 0.0f)); // Опускаємо на половину висоти
+        model = glm::translate(model, glm::vec3(0.0f, -3.5f, 0.0f));
         model = glm::scale(model, glm::vec3(1.0f));
 
         glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "view"), 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
 
-        // Параметри точкового світла
         glUniform3f(glGetUniformLocation(shaderProgram, "viewPos"), cameraPos.x, cameraPos.y, cameraPos.z);
         glUniform3f(glGetUniformLocation(shaderProgram, "light.position"), 5.0f, 5.0f, 5.0f);
         glUniform3f(glGetUniformLocation(shaderProgram, "light.ambient"), 0.3f, 0.3f, 0.3f);
@@ -296,7 +293,6 @@ int main() {
         glUniform1f(glGetUniformLocation(shaderProgram, "light.linear"), 0.022f);
         glUniform1f(glGetUniformLocation(shaderProgram, "light.quadratic"), 0.0019f);
 
-        // Налаштування матеріалу (Бронза/Золото тепер коректно передаються в структуру Material)
         glUniform3f(glGetUniformLocation(shaderProgram, "material.ambient"), 0.2125f, 0.1275f, 0.054f);
         glUniform3f(glGetUniformLocation(shaderProgram, "material.diffuse"), 0.714f, 0.4284f, 0.1814f);
         glUniform3f(glGetUniformLocation(shaderProgram, "material.specular"), 0.3935f, 0.2719f, 0.1667f);
